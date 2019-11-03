@@ -2,16 +2,21 @@ package com.taa.taaproject.api;
 
 import com.taa.taaproject.api.dto.CreatePersonneDTO;
 import com.taa.taaproject.domain.service.PersonneWriteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.inject.Inject;
 
 @RestController
 @RequestMapping("api/personne")
 public class PersonneWriteResource {
 
-    @Autowired
     private PersonneWriteService personneWriteService;
+
+    @Inject
+    PersonneWriteResource(PersonneWriteService personneWriteService) {
+        this.personneWriteService = personneWriteService;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
