@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.11</java.version>
 		<swagger.version>2.9.2</swagger.version>
 		<db.driver>org.h2.Driver</db.driver>
 		<db.url>jdbc:h2:${project.build.directory}/db/taaproject</db.url>
@@ -46,6 +46,12 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>${swagger.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -93,6 +99,14 @@
 					<url>${db.url}</url>
 					<user>${db.user}</user>
 					<password>${db.password}</password>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>

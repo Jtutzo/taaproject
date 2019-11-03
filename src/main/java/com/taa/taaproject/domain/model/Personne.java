@@ -13,5 +13,5 @@ import java.util.UUID;
 public class Personne {
     private UUID id;
     private String nom;
-    private String pernom;
+    private String prenom;
 }
